@@ -8,21 +8,31 @@
 </head>
 <body>
   <header>
-    <h1>Números de COVID 19 no Brasil.</h1>
+    <h1>Dados de COVID 19 no Brasil.</h1>
   </header>    
-  <article>
-    <label for="region">Digite um estado:</label>
-    <input type="text" name="region" id="region">
-    <button>Pesquisar</button>
-  </article>
-  <!-- <article>
-    <h2>Ou selecione no mapa:</h2>
-    <img src="https://static.todamateria.com.br/upload/es/ta/estadosdobrasilfinal-cke.jpg" alt="Mapa do Brasil">
-  </article> -->
-  <section class="response">
-    
-  </section>
-  
+  <div class="container">
+    <article class="write-region">
+      <section>
+        <label for="region">Digite um estado:</label>
+      </section>
+
+      <section>
+        <input type="text" name="region" id="region">
+        <button type="button">Pesquisar</button>
+      </section>
+    </article>
+
+    <article class="select-region">
+      <h2>Ou selecione no mapa:</h2>
+      <img src="https://static.todamateria.com.br/upload/es/ta/estadosdobrasilfinal-cke.jpg" alt="Mapa do Brasil">
+    </article>
+
+    <section class="response inactive">
+    </section>
+  </div>
+  <footer>
+    <p>Desafio proposto por Omega Sistemas.</p>
+  </footer>
   <script src="scripts.js"></script>
 </body>
 </html>
