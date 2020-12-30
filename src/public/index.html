@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <header>
@@ -12,10 +12,7 @@
   </header>    
   <div class="container">
     <article class="write-region">
-      <section>
-        <label for="region">Digite um estado:</label>
-      </section>
-
+      <label for="region">Digite um estado:</label>
       <section>
         <input type="text" name="region" id="region">
         <button type="button">Pesquisar</button>
@@ -24,16 +21,17 @@
 
     <section class="response">
       <div>
-        <h3>Resultados do estado <span></span></h3>
+        <h3>Resultados do estado <span id="region"></span></h3>
       </div>
-      <p></p>
-      <p></p>
-      <p></p>
+      <p>mortos: <span id="death"></span></p>
+      <p>Curados: <span id="cures"></span></p>
+      <p>Casos: <span id="cases"></span></p>
+      <p>Doentes: <span id="sicks"></span></p>
     </section>
   </div>
   <footer>
     <p>Desafio proposto por Omega Sistemas.</p>
   </footer>
-  <script src="scripts.js"></script>
+  <script src="./script/scripts.js"></script>
 </body>
 </html>
