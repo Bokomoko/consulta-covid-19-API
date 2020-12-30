@@ -10,7 +10,7 @@ async function  fetchStates(region) {
   const myResponse = await fetch(url)
   const stateList = await myResponse.json()
   const arrayOfStates = Array.from(stateList)
-  const onlyOne = arrayOfStates.filter( (estado)=> estado.nome == region)
+  const onlyOne = arrayOfStates.filter( (state)=> state.nome == region)
   return onlyOne[0].sigla
 }
 
@@ -28,5 +28,5 @@ document.querySelector('button')
     let regionToUrl = region.value
     let uf = await  fetchStates(regionToUrl)
     let dataState = await fetchCasos(uf)
-
+    console.log(dataState);
   })
