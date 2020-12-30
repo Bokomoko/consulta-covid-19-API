@@ -8,18 +8,32 @@ const options = {
       cache: 'default'
     }
 
-//  função para retornar nome do estado com properCase
+
+// função para levar os dados para o doc html
+async function mostraDados(numerosCovid) {
+    document.getElementById("death").innerText = numerosCovid.deaths || "N/A"
+    document.getElementById("cures").innerText = numerosCovid.cures || "N/A"
+    document.getElementById("cases").innerText = numerosCovid.cases || "N/A"
+    document.getElementById("sicks").innerText = numerosCovid.sick || "N/A"
+    document.getElementById("uptodate").innerText = numerosCovid.datetime || "N/A"
+
+}
+//  função para obter a sigla de um estado a partir de seu nome
 async function  fetchStates(aState) {
-  // monta a url para buscar 
+  // monta a url para buscar a lista de todos os estados
   const wurl = "https://servicodados.ibge.gov.br/api/v1/localidades/estados"
   // faz a consulta propriamente dita 
   const myResponse = await fetch(wurl,options)
   // converte a resposta para JSON
   const stateList = await myResponse.json()
+  //  converte a lista de estados em um array
   const arrayOfStates = Array.from(stateList)
+  // encontra o estado com aquele nome 
   const onlyOne = arrayOfStates.find( 
+    // converte tudo para maiúsculas para a busca bater
       (est)=> est.nome.toUpperCase() == aState.toUpperCase()
     ) 
+  // retorna a sigla do estado 
   return onlyOne.sigla
 }
 
@@ -35,7 +49,7 @@ async function  fetchCasos(umEstado) {
   return casos
 }
 
-
+// observe que a função usada para fiscar o evento click do botão é ASYNC 
 document.querySelector('button')
   .addEventListener('click', async (event) => {
     // busca a sigla do estado, dado o nome 
@@ -43,11 +57,5 @@ document.querySelector('button')
     // busca os dados de covid19 dado a sigla da UF
     let dadosEstado = await fetchCasos(uf)
     // apresenta os dados no painel
-    document.getElementById("death").innerText = dadosEstado.deaths || "N/A"
-    document.getElementById("cures").innerText = dadosEstado.cures || "N/A"
-    document.getElementById("cases").innerText = dadosEstado.cases || "N/A"
-    document.getElementById("sicks").innerText = dadosEstado.sick || "N/A"
-    document.getElementById("uptodate").innerText = dadosEstado.datetime || "N/A"
-
-
+    await mostraDados(dadosEstado)
   })
