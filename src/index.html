@@ -14,19 +14,35 @@
     <article class="write-region">
       <label for="region">Digite um estado:</label>
       <section>
-        <input type="text" name="region" id="region">
+        <input type="text" name="region" id="region" placeholder="ex: Ceará, Rio Grande do Norte">
         <button type="button">Pesquisar</button>
       </section>
     </article>
 
     <section class="response">
       <div>
-        <h3>Resultados do estado <span id="region"></span></h3>
+        <h3>Resultados do <span class="state">estado</span> <span id="state"></span></h3>
       </div>
-      <p>mortos: <span id="death"></span></p>
-      <p>Curados: <span id="cures"></span></p>
-      <p>Casos: <span id="cases"></span></p>
-      <p>Doentes: <span id="sicks"></span></p>
+      <table>
+        <tbody>
+          <tr>
+            <th class="cases">Casos: </th>
+            <td id="cases"></td>
+          </tr>
+          <tr>
+            <th class="suspects">Suspeitos: </th>
+            <td id="suspects"></td>
+          </tr>
+          <tr>
+            <th class="deaths">Mortes: </th>
+            <td id="deaths"></td>
+          </tr>
+          <tr>
+            <th class="refuses">Discartados: </th>
+            <td id="refuses"></td>
+          </tr>
+        </tbody>
+      </table>
     </section>
   </div>
   <footer>
