@@ -1,0 +1,38 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/public/style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Dados de COVID 19 no Brasil.</h1>
+    </header>    
+    <div class="container">
+      <article class="write-region">
+        <label for="state">Digite um estado:</label>
+        <section>
+          <input type="text" name="state" id="state">
+          <button type="button">Pesquisar</button>
+        </section>
+      </article>
+
+      <section class="response">
+        <div>
+          <h3>Resultados do estado <span id="stateresults"></span></h3>
+        </div>
+        <p>mortos: <span id="death"></span></p>
+        <p>Curados: <span id="cures"></span></p>
+        <p>Casos: <span id="cases"></span></p>
+        <p>Doentes: <span id="sicks"></span></p>
+        <p>Atualizado até: <span id="uptodate"></span></p>
+      </section>
+    </div>
+    <footer>
+      <p>Desafio proposto por Allan Cassio.</p>
+    </footer>
+    <script src="./src/public/script/scripts.js"></script>
+  </body>
+  </html>
